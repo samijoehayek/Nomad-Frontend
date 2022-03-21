@@ -1,21 +1,5 @@
-import {
-  useOasisXRegistryMethod,
-  useERC721Method,
-  userHasProxy,
-  approvedForAll
-} from "./useOasisXRegistry";
-import useOasisXExchangeMethod from "./useOasisXExchange";
-import useOasisXAtomicizerMethod from "./useOasisXAtomicizer";
-import useOasisXStaticMethod from "./useOasisXStatic";
-import useWethConvertMethod from './useWethConvert';
+import useNomad721Method from "./useNomad721";
 
 export {
-  useOasisXRegistryMethod,
-  useERC721Method,
-  userHasProxy,
-  approvedForAll,
-  useOasisXExchangeMethod,
-  useOasisXAtomicizerMethod,
-  useOasisXStaticMethod,
-  useWethConvertMethod
+  useNomad721Method
 };

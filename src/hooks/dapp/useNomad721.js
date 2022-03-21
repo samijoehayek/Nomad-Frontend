@@ -1,14 +1,14 @@
-import { useContractCall, useContractFunction } from "@usedapp/core";
+import { useContractFunction } from "@usedapp/core";
 
 import * as contracts from "config/contracts/index.js";
 
-const useOasisXAtomicizerMethod = (methodName) => {
+const useNomad721Method = (methodName) => {
     const { state, send, events } = useContractFunction(
-      contracts.OasisXAtomicizerContract,
+      contracts.Nomad721Contract,
       methodName,
       {}
     );
     return { state, send, events };
 };
   
-export default useOasisXAtomicizerMethod;
+export default useNomad721Method;
