@@ -1,14 +1,30 @@
-import React from "react";
+import React, {useState} from "react";
 import {Button, Container, Nav, Navbar} from "react-bootstrap";
 import Brand from "../../assets/images/logo.png";
 import { FaTwitter, FaDiscord } from 'react-icons/fa';
 import { BiWallet } from "react-icons/bi";
-
-
 import "./styles.scss";
+import {useEthers} from "@usedapp/core";
+import WalletSidebar from "../WalletSidebar";
 
 
 const NavBar = () => {
+    const {
+        library,
+        deactivate,
+        account,
+        activateBrowserWallet,
+        activate,
+        error
+    } = useEthers();
+
+    const [displayedError, setDisplayedError] = useState("");
+    const [isWalletList, setIsWalletList] = React.useState(false);
+
+    const handleConnectWallet = () =>{
+        account ? deactivate(): setIsWalletList(true);
+    };
+
     return (
         <Navbar collapseOnSelect variant="dark" expand="lg" className="nomadNavBar" >
             <Container fluid>
@@ -34,7 +50,18 @@ const NavBar = () => {
                     <Nav className="navbar-right">
                         <Button variant="secondary" className="nomadNavBarButtonTwitter rounded-0"><FaTwitter /></Button>{' '}
                         <Button variant="secondary" className="nomadNavBarButtonTwitter rounded-0"><FaDiscord /></Button>{' '}
-                        <Button variant="light" className="nomadNavBarButtonWallet rounded-0"><BiWallet /></Button>
+                        {account
+                            ? <Button variant="light" className="nomadNavBarButtonWallet rounded-0"
+                                    onClick={handleConnectWallet}>Disconnect</Button>
+                            : <><Button variant="light" className="nomadNavBarButtonWallet rounded-0"
+                                    onClick={handleConnectWallet}><BiWallet/></Button>
+                              <WalletSidebar
+                                isOpen={isWalletList}
+                                onClose={() => setIsWalletList(false)}
+                                activate={activate}
+                                activateBrowserWallet={activateBrowserWallet}
+                              /></>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Container>

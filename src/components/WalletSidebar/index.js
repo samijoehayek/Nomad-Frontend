@@ -17,7 +17,7 @@ function WalletSidebar({ isOpen, onClose, activate, activateBrowserWallet }) {
           zIndex: 10001,
           position: "fixed",
           right: !isOpen ? -270 : 0,
-          marginTop: 20,
+          marginTop: 40,
           height: "auto",
           borderTopLeftRadius: "5px",
           borderBottomLeftRadius: "5px",

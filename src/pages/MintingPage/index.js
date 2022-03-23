@@ -4,6 +4,7 @@ import "./styles.scss";
 import React from "react";
 import {AiOutlineArrowRight} from "react-icons/ai"
 import Footer from "../../components/Footer";
+import ConnectButtonWallet from "../../components/ConnectWalletButton";
 
 const MintingPage = () => {
     return (
@@ -40,7 +41,8 @@ const MintingPage = () => {
                                 </Col>
                             </Row>
                         </Container>
-                        <Button variant="light" className="rounded-0 connectWalletBtn">connect wallet <AiOutlineArrowRight /></Button>
+                        <ConnectButtonWallet />
+                        {/*<Button variant="light" className="rounded-0 connectWalletBtn">connect wallet <AiOutlineArrowRight /></Button>*/}
                     </Col>
                 </Row>
             </Container>

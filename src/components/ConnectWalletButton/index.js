@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useEthers } from "@usedapp/core";
-
-import styles from "./ConnectButtonWallet.module.scss";
 import WalletSidebar from "../WalletSidebar";
+import {Button} from "react-bootstrap";
+import {AiOutlineArrowRight} from "react-icons/ai";
 
 const ConnectButtonWallet = () => {
   const {
@@ -21,24 +21,26 @@ const ConnectButtonWallet = () => {
   };
 
   return account ? (
-    <div style={{ display: "flex", flexDirection: "column" }}>
-
-
-    </div>
+      <Button
+          variant="light"
+          className="rounded-0 connectWalletBtn"
+          prefixIcon="Wallet"
+          padding="5px 5px"
+      >Mint <AiOutlineArrowRight /> </Button>
   ) : (
     <div>
       <Button
-        variant="Outlined"
-        className={styles.connectBtn}
+        variant="light"
+        className="rounded-0 connectWalletBtn"
         onClick={handleConnectWallet}
         prefixIcon="Wallet"
         padding="5px 5px"
-      />
+      >connect wallet <AiOutlineArrowRight /> </Button>
       <WalletSidebar
-        isOpen={isWalletList}
-        onClose={() => setIsWalletList(false)}
-        activate={activate}
-        activateBrowserWallet={activateBrowserWallet}
+          isOpen={isWalletList}
+          onClose={() => setIsWalletList(false)}
+          activate={activate}
+          activateBrowserWallet={activateBrowserWallet}
       />
     </div>
   );

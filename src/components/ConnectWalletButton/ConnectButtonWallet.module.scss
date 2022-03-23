@@ -1,22 +1,28 @@
-.connectBtn {
-  border-radius: 50% !important;
-  background: transparent !important;
-  color: #2153c1 !important;
+//.connectBtn {
+//  border-radius: 50% !important;
+//  background: transparent !important;
+//  color: #2153c1 !important;
+//
+//  @media (max-width: 768px) {
+//    font-size: 12px !important;
+//    padding: 6px 6px 6px 6px !important;
+//  }
+//}
 
-  @media (max-width: 768px) {
-    font-size: 12px !important;
-    padding: 6px 6px 6px 6px !important;
-  }
-}
+//.connectedBtn {
+//  border-radius: 16px !important;
+//  background: white !important;
+//  color: #2153c1 !important;
+//  display:flex !important;
+//  @media (max-width: 768px) {
+//    font-size: 12px !important;
+//    padding: 6px 6px 6px 6px !important;
+//  }
+//
+//}
 
-.connectedBtn {
-  border-radius: 16px !important;
-  background: white !important;
-  color: #2153c1 !important;
-  display:flex !important;
-  @media (max-width: 768px) {
-    font-size: 12px !important;
-    padding: 6px 6px 6px 6px !important;
-  }
-
+.connectWalletBtn{
+  width: 100%;
+  margin-top: 40px;
+  font-family: 'Roboto Mono', monospace;
 }
